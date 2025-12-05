@@ -29,21 +29,31 @@ def cadastrar_aluno():
     print("\nAluno cadastrado com sucesso!!\n")
     pd.read_csv('CADASTRO-DE-ALUNOS/codigo-base/alunos.csv', sep=';', on_bad_lines='skip')
     print(df)
+    saida01 = input("\n= = = Digite ENTER para voltar ao menu inicial = = = ")
 
     
+
+def pesquisar_aluno():
+    
+    pesquisa = input("\nDigite o nome do aluno que deseja pesquisar: ").strip().lower()
+
+
+
 def escolha_opcao():
+    while True:
 
-    menu_inicial()
-    opcao = input("Digite a opção desejada: ")
+        menu_inicial()
+        opcao = input("Digite a opção desejada: ")
 
-    if opcao == '1':
-        cadastrar_aluno()
-    elif opcao == '2':
-        pesquisar_aluno()
-    elif opcao == '3':
-        sair_sistema()
-    else:
-        print("Opção inválida. Por favor, tente novamente.")
+        if opcao == '1':
+            cadastrar_aluno()
+        elif opcao == '2':
+            pesquisar_aluno()
+        elif opcao == '3':
+            sair_sistema()
+            break
+        else:
+            print("Opção inválida. Por favor, tente novamente.")
 
 if __name__ == "__main__":
     escolha_opcao()
